@@ -1,10 +1,9 @@
 import { SerachIcon } from 'assets/svgs'
-import { useRef } from 'react'
 import { useRecoilValue } from 'recoil'
 import { SerachResultState } from 'states/state'
 import styles from './result.module.scss'
 
-const Result = () => {
+const Result = ({ moveNum }: { moveNum: number }) => {
   const serachResultState = useRecoilValue(SerachResultState)
 
   return (
@@ -15,7 +14,7 @@ const Result = () => {
             <div className={styles.iconBox}>
               <SerachIcon width='20px' height='20px' />
             </div>
-            <p className={styles.title}>{data.sickNm} </p>
+            <p className={styles.t1itle}>{data.sickNm} </p>
           </li>
         )
       })}
@@ -24,31 +23,3 @@ const Result = () => {
 }
 
 export default Result
-
-// function moveCells(direction: string) {
-//   switch (direction) {
-//     case 'up':
-//       return
-//     case 'down':
-//       return
-//     case 'left':
-//       return
-//     case 'right':
-//       return
-
-//     default:
-//       break
-//   }
-// }
-
-// window.addEventListener('keydown', (event) => {
-//   if (event.key === 'ArrowUp') {
-//     moveCells('up')
-//   } else if (event.key === 'ArrowDown') {
-//     moveCells('down')
-//   } else if (event.key === 'ArrowLeft') {
-//     moveCells('left')
-//   } else if (event.key === 'ArrowRight') {
-//     moveCells('right')
-//   }
-// })
